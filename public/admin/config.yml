@@ -1,0 +1,26 @@
+backend:
+  name: git-gateway
+  branch: master
+media_folder: public/img
+public_folder: img
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+    - label: "Home"
+      name: "home"
+      file: "content/home.md"
+      fields:
+        - { label: "Title", name: "title", widget: "string"}
+        - { label: "Publish Date", name: "date", widget: "datetime" }
+        - { label: "Body", name: "body", widget: "markdown"}
+        - label: 'Cats'
+          name: "cats"
+          widget: list
+          fields:
+            - { label: "Name", name: "name", widget: "string"}
+            - { label: "Description", name: "description", widget: "text"}
+
+Awesome! Netlify CMS should now be available at localhost:3000/admin/index.html. Unfortunately we can't edit our content just yet. First we need to move our code into a git repository, and create a new Netlify site.
+
+Tip: If you want to test changes made to your config.yml file locally, swap out "git-gateway"
